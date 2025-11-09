@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splatter - Gaussian Splat Manipulator</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="controls">
+      <div class="controls-header">
+        <h1>Splatter</h1>
+        <p>Gaussian Splat Manipulator</p>
+      </div>
+
+      <div class="control-section">
+        <label for="file-input" class="file-label">Load PLY File</label>
+        <input type="file" id="file-input" accept=".ply" />
+      </div>
+
+      <div class="control-section">
+        <h3>Displacement</h3>
+        <label>
+          Noise Intensity
+          <input type="range" id="noise-intensity" min="0" max="5" step="0.1" value="0" />
+          <span id="noise-intensity-value">0</span>
+        </label>
+        <label>
+          Noise Scale
+          <input type="range" id="noise-scale" min="0.1" max="10" step="0.1" value="1" />
+          <span id="noise-scale-value">1</span>
+        </label>
+        <label>
+          Animation Speed
+          <input type="range" id="animation-speed" min="0" max="2" step="0.1" value="1" />
+          <span id="animation-speed-value">1</span>
+        </label>
+      </div>
+
+      <div class="control-section">
+        <h3>Effects</h3>
+        <label>
+          <input type="checkbox" id="vortex-effect" />
+          Vortex
+        </label>
+        <label>
+          Vortex Strength
+          <input type="range" id="vortex-strength" min="0" max="5" step="0.1" value="1" disabled />
+          <span id="vortex-strength-value">1</span>
+        </label>
+        <label>
+          <input type="checkbox" id="wave-effect" />
+          Wave
+        </label>
+        <label>
+          Wave Amplitude
+          <input type="range" id="wave-amplitude" min="0" max="2" step="0.1" value="0.5" disabled />
+          <span id="wave-amplitude-value">0.5</span>
+        </label>
+      </div>
+
+      <div class="control-section">
+        <h3>Color</h3>
+        <label>
+          Hue Shift
+          <input type="range" id="hue-shift" min="0" max="360" step="1" value="0" />
+          <span id="hue-shift-value">0°</span>
+        </label>
+        <label>
+          Saturation
+          <input type="range" id="saturation" min="0" max="2" step="0.1" value="1" />
+          <span id="saturation-value">1</span>
+        </label>
+      </div>
+
+      <div class="control-section">
+        <button id="reset-btn">Reset All</button>
+      </div>
+    </div>
+
+    <div id="canvas-container"></div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
